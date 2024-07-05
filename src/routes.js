@@ -1,11 +1,10 @@
 const route = require('./fastify');
-const c = require('../controller');
+const c = require('./controller');
 
 // Routes start here
 
-route.get('/', c.root);
-route.get('/check-data', c.checkData);
-route.get('/health-check', c.healthCheck);
+route.get('/', c.healthCheck);
+route.post('/', c.root);
 
 route.setNotFoundHandler(c.notFound);
 
